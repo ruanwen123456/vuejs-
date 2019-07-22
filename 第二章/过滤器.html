@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤器</title>
+    <script src="../vue2.0.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{date|formatdate}}
+    </div>
+    <script>
+        //不够10的数补零
+        var paddate = function(value){
+            return value < 10 ? '0'+value:value
+        } 
+        new Vue({
+            el:'#app',
+            data() {
+                return {
+                    date:new Date()
+                }
+            },
+            //过滤器可以串联传参 第一个参数value是数据本身参数依次往后面添加
+            filters:{
+                formatdate:function(value){
+                    var date = new Date(value)
+                    var year = date.getFullYear()
+                    var month = paddate(date.getMonth()+1)
+                    var day = paddate(date.getDate())
+                    var hours = paddate(date.getHours())
+                    return year+'-'+month+'-'+day+' '+hours
+                }
+            },
+            mounted() {
+                var _this = this
+                this.timer = setInterval(function(){
+                    _this.date = new Date()
+                },1000)
+            },
+            beforeDestroy() {
+                if(this.timer){
+                    clearInterval(this.timer)
+                }
+            },
+
+        })
+    </script>
+</body>
+</html>
