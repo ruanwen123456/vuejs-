@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue2.0.min.js"></script>
+</head>
+<body>
+    <!-- .number 会将输入转出number类型 -->
+    <div id="app">
+        <input type="text" name="" id="" v-model.number="message">
+        <p>
+            {{message}}
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    message:1232
+                }
+            },
+        })
+    </script>
+</body>
+</html>

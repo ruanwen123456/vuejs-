@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue2.0.min.js"></script>
+</head>
+<style>
+    [v-cloak]{
+        display: none
+    }
+</style>
+<body>
+    <!-- 解决加载速度慢的问题 -->
+    <div id="app" v-cloak>
+        {{message}}
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data() {
+                return {
+                    message:'这是一段文本'
+                }
+            },
+        })
+    </script>
+</body>
+</html>

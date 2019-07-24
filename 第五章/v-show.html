@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue2.0.min.js"></script>
+</head>
+<body>
+    <!-- 满足条件显示 属性切换 v-if不会渲染元素-->
+    <div id="app">
+        <p v-show="state==1">满足条件显示</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data() {
+                return {
+                    state:2
+                }
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue2.0.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="radio" name="" id="html" v-model="picked" value="html">
+        <label for="html">HTML</label>
+        <br>
+        <input type="radio" name="" id="js" value="js" v-model="picked">
+        <label for="js">JS</label>
+        <br>
+        <input type="radio" name="" id="css" value="css" v-model="picked">
+        <label for="css">CSS</label>
+        <p>
+            你的选择是
+            {{ picked }}
+        </p>
+    </div>
+    <script>
+    new Vue({
+        el:'#app',
+        data() {
+            return {
+                picked:'js'
+            }
+        },
+    })
+    </script>
+</body>
+</html>
